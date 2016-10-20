@@ -1,0 +1,32 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="clearfix m-d" style="padding:0px 0px 15px 0px">
+			<button type="button" class="btn btn-primary pull-right">New</button>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading font-bold">
+        			title~
+    		</div>
+		 	<div class="table-responsive">
+		 		<table class="table table-striped">
+		 			<thead>
+		 					<tr>
+		 					<th>ID</th>
+		 					<th>title</th>
+		 					<th>date</th>
+		 					<th>state</th>
+		 					</tr>
+		 			</thead>
+		 			<tbody>
+		 					<tr ng-repeat="note in notes">
+		 					<td>{{note.noteID}}</td>
+		 					<td>{{note.title}}</td>
+		 					<td>{{note.date}}</td>
+		 					<td>public</td>
+		 					</tr>
+		 			</tbody>
+		 		</table>
+		 	</div>
+		</div>
+	</div>
+</div>
