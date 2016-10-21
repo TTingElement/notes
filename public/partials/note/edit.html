@@ -4,10 +4,10 @@
 			<button type="button" class="btn btn-primary pull-right" ng-click="submit()">submit</button>
 		</div>
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="title" ng-model="note.title">
+			<input type="text" class="form-control" placeholder="title" ng-model="note.title" >
 		</div>
-		<div class="form-group">
-			<textarea class="form-control" ng-model="note.content"></textarea>
+		<div contenteditable='true'  style='-webkit-use-select:text'>
+			<textarea id="textID" class="form-control" ng-model="note.content"></textarea>
 		</div>
 	</form>
 </div>

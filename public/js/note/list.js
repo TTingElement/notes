@@ -12,11 +12,13 @@ app.controller('NoteListController', ['$scope', '$state', '$resource','$location
     };
 
     $scope.editNote = function(note){
-    	$location.path('/edit/{int id}',note.noteID);
+    	debugger;
+    	$location.path('/edit/' + note.noteID);
     };
 
 
     $scope.changeReleasedStatu = function(note){
+    	debugger;
     	debugger;
     	note.released = !note.released;
     	var noteList = $resource('/api/notes/:id',{id:$scope.noteID},{update:{ method: 'PUT' }});

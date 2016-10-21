@@ -1,9 +1,7 @@
 {
   "name": "notes",
-  "authors": [
-    "TTing <TTingElement@gmail.com>"
-  ],
-  "description": "\"",
+  "authors": ["TTing"],
+  "description": "",
   "main": "",
   "license": "MIT",
   "homepage": "",
