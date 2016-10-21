@@ -37,12 +37,12 @@ app
                 }
             })
 
-             .state('edit', {
-                url: '/edit',
+            .state('edit', {
+                url: '/edit/{id:int}',
                 views: {
                     "":{
                         templateUrl: 'partials/note/edit.html',
-                        controller: 'editListController',
+                        controller: 'editController',
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function( $ocLazyLoad ){

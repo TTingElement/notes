@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="clearfix m-d" style="padding:0px 0px 15px 0px">
-			<button type="button" class="btn btn-primary pull-right">New</button>
+			<button type="button" class="btn btn-primary pull-right" ng-click="newNote()">New</button>
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading font-bold">
@@ -11,18 +11,24 @@
 		 		<table class="table table-striped">
 		 			<thead>
 		 					<tr>
-		 					<th>ID</th>
-		 					<th>title</th>
-		 					<th>date</th>
-		 					<th>state</th>
+		 					<th class="text-center vertical-middle" style="width:10%">ID</th>
+		 					<th class="text-center vertical-middle" style="width:30%">title</th>
+		 					<th class="text-center vertical-middle" style="width:20%">createDate</th>
+		 					<th class="text-center vertical-middle" style="width:20%">modifiedDate</th>
+		 					<th class="text-center vertical-middle" style="width:20%">state</th>
 		 					</tr>
 		 			</thead>
 		 			<tbody>
 		 					<tr ng-repeat="note in notes">
-		 					<td>{{note.noteID}}</td>
-		 					<td>{{note.title}}</td>
-		 					<td>{{note.date}}</td>
-		 					<td>public</td>
+		 					<td class="text-center vertical-middle">{{note.noteID}}</td>
+		 					<td class="text-center vertical-middle">{{note.title}}</td>
+		 					<td class="text-center vertical-middle">{{note.createDate}}</td>
+		 					<td class="text-center vertical-middle">{{note.modifiedDate}}</td>
+		 					<td class="text-center vertical-middle">
+		 						<button type="button" class="btn btn-warning" ng-click="editNote(note)" >edit</button>
+		 						<button type="button" class="btn btn-primary" ng-click="changeReleasedStatu(note)" ng-if="!note.released">released</button>
+		 						<button type="button" class="btn btn-danger" ng-click="changeReleasedStatu(note)" ng-if="note.released">unreleased</button>
+		 					</td>
 		 					</tr>
 		 			</tbody>
 		 		</table>
