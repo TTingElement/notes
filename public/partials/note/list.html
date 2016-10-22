@@ -25,6 +25,7 @@
 		 					<td class="text-center vertical-middle">{{note.createDate}}</td>
 		 					<td class="text-center vertical-middle">{{note.modifiedDate}}</td>
 		 					<td class="text-center vertical-middle">
+		 						<button type="button" class="btn btn-info" ng-click="preview(note)" >preview</button>
 		 						<button type="button" class="btn btn-warning" ng-click="editNote(note)" >edit</button>
 		 						<button type="button" class="btn btn-primary" ng-click="changeReleasedStatu(note)" ng-if="!note.released">released</button>
 		 						<button type="button" class="btn btn-danger" ng-click="changeReleasedStatu(note)" ng-if="note.released">unreleased</button>

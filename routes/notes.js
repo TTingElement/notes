@@ -60,9 +60,13 @@ router.put('/:id',function(req,res){
 	var collection = db.get('noteList');
 	var noteID = parseInt(req.params.id);
 	var note = req.body;
+	console.log("############# put ############");
+	console.log(note)
 	var curretDate = new Date();
 	note.modifiedDate = getNowFormatDate();
 	collection.update({'noteID':noteID},note,function(err, info){
+		console.log("############# put finish ############");
+		console.log(note)
 		if (err) throw err;
 		res.json(info);
 	});

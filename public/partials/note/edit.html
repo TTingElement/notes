@@ -7,7 +7,8 @@
 			<input type="text" class="form-control" placeholder="title" ng-model="note.title" >
 		</div>
 		<div contenteditable='true'  style='-webkit-use-select:text'>
-			<textarea id="textID" class="form-control" ng-model="note.content"></textarea>
+			<!-- <textarea id="textID" class="form-control" ng-model="note.content"></textarea> -->
+			<textarea froala ng-model="note.content"></textarea>
 		</div>
 	</form>
 </div>

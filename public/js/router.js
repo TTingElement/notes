@@ -10,16 +10,16 @@ app
     function ($stateProvider,   $urlRouterProvider) {
 
         $urlRouterProvider
-            .otherwise('/app');
+            .otherwise('/');
         $stateProvider
 
-            .state('app', {
+            .state('admin', {
                 abstract: true,
-                url: '/app',
-                templateUrl: 'partials/app.html',
+                url: '/admin',
+                templateUrl: 'partials/admin.html',
             })
 
-            .state('app.list', {
+            .state('admin.list', {
                 url: '/list',
                 views: {
                     "main":{
@@ -48,6 +48,30 @@ app
                                 function( $ocLazyLoad ){
                                     return $ocLazyLoad.load([
                                         'js/note/edit.js'
+                                        ]);
+                                }]
+                        }
+                    }
+                }
+            })
+
+            .state('app', {
+                abstract: true,
+                url: '/app',
+                templateUrl: 'partials/app.html',
+            })
+
+            .state('app.preview', {
+                url: '/preview/{id:int}',
+                views: {
+                    "main":{
+                        templateUrl: 'partials/note/preview.html',
+                        controller: 'previewController',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function( $ocLazyLoad ){
+                                    return $ocLazyLoad.load([
+                                        'js/note/preview.js'
                                         ]);
                                 }]
                         }

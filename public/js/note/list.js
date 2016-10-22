@@ -16,9 +16,7 @@ app.controller('NoteListController', ['$scope', '$state', '$resource','$location
     	$location.path('/edit/' + note.noteID);
     };
 
-
     $scope.changeReleasedStatu = function(note){
-    	debugger;
     	debugger;
     	note.released = !note.released;
     	var noteList = $resource('/api/notes/:id',{id:$scope.noteID},{update:{ method: 'PUT' }});
@@ -28,6 +26,11 @@ app.controller('NoteListController', ['$scope', '$state', '$resource','$location
 					$location.path('/app/list');
 				};
 		});
+    };
+
+    $scope.preview = function(note){
+        debugger;
+        $location.path('/app/preview/'+note.noteID);
     };
 
 }]);
