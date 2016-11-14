@@ -6,9 +6,10 @@
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="title" ng-model="note.title" >
 		</div>
-		<div contenteditable='true'  style='-webkit-use-select:text'>
+		<div  style='-webkit-use-select:text'>
 			<!-- <textarea id="textID" class="form-control" ng-model="note.content"></textarea> -->
-			<textarea froala ng-model="note.content"></textarea>
+			<!-- <textarea froala ng-model="note.content"></textarea> -->
+			<simditor id="simditorID" ng-model="note.content" placeholder="请输入内容"></simditor>
 		</div>
 	</form>
 </div>
